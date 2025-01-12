@@ -1,0 +1,13 @@
+
+This is the logic for converting Integer Number to Short i.e -32768 to 32767
+
+public static int getShort(int num) {
+       	int n1 = (num % 65536 + 65536) % 65536;
+	
+       	if (n1 > 32767) {
+            n1 -= 65536;
+        }
+
+        return n1;
+}
+    

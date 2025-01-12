@@ -1,0 +1,26 @@
+
+This is the logic for using the previous 2 functions (i.e getBytes and getShort) in the one method which is getNumber in which it takes 2 input (i.e first is integer number and second is String which can be 'BYTE' or 'SHORT' in any case small or capital) 
+
+public static int getNumber(int num, String type){
+        String a = "Byte";
+        String b = "Short";
+
+        if(a.equalsIgnoreCase(type) == true){
+            int n1 = (num % 256 + 256) % 256;
+
+            if (n1 > 127) {
+                n1 -= 256;
+            }
+
+            return n1;
+        }else if(b.equalsIgnoreCase(type) == true){
+            int n2 = (num % 65536 + 65536) % 65536;
+
+            if (n2 > 32767) {
+              n2 -= 65536;
+            }
+
+            return n2;
+        }
+        return 0;
+    }

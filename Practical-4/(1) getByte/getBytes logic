@@ -1,0 +1,12 @@
+ 
+ This is the logic for converting Integer Number to Bytes i.e -128 to 127
+ 
+ public static int getByte(int num) {
+        int n1 = (num % 256 + 256) % 256;
+
+        if (n1 > 127) {
+            n1 -= 256;
+        }
+
+        return n1;
+    }
